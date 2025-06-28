@@ -1,0 +1,21 @@
+<div [formGroup]="form">
+    <label for="mainModelNumber">mainModelNumber</label>
+    <div class="isolved-input-container" style="width: 300px;">
+        <p-inputnumber inputId="mainModelNumber" required="true" formControlName="mainModelNumber" />
+        <span *ngIf="form.controls.mainModelNumber.hasError('required')">mainModelNumber is Required</span> 
+    </div>
+    
+    <label for="mainModelText">mainModelText</label>
+    <div class="isolved-input-container" style="width: 300px;">
+        <input type="text" id="mainModelText" pInputText formControlName="mainModelText" required />
+        <span *ngIf="form.controls.mainModelText.hasError('required')">mainModelText is Required</span> 
+    </div>
+
+    <app-sub-component1 formControlName="options1"></app-sub-component1>
+    <app-sub-component2 formControlName="options2"></app-sub-component2>
+
+    <div class="">
+        <p-button label="Check" (onClick)="checkForm()" />
+        <p-button label="Update Value" (onClick)="updateValue()" />
+    </div>
+</div>
