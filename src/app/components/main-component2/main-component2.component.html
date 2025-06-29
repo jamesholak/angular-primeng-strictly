@@ -1,21 +1,26 @@
 <div [formGroup]="form">
-    <label for="mainModelNumber2">mainModelNumber2</label>
-    <div class="isolved-input-container" style="width: 300px;">
-        <p-inputnumber inputId="mainModelNumber2" required="true" formControlName="mainModelNumber2" />
-        <span *ngIf="form.controls.mainModelNumber2.hasError('required')">mainModelNumber2 is Required</span> 
-    </div>
+  <label for="mainModelNumber2">mainModelNumber2</label>
+  <div class="myproject-input-container" style="width: 300px">
+    <p-inputnumber inputId="mainModelNumber2" required="true" formControlName="mainModelNumber2" />
+    <span *ngIf="form.controls.mainModelNumber2.hasError('required')">mainModelNumber2 is Required</span>
+  </div>
 
-    <label for="mainModelText2">mainModelText2</label>
-    <div class="isolved-input-container" style="width: 300px;">
-        <input type="text" id="mainModelText2" pInputText formControlName="mainModelText2" required />
-        <span *ngIf="form.controls.mainModelText2.hasError('required')">mainModelText2 is Required</span>
-    </div>
+  <label for="mainModelText2">mainModelText2</label>
+  <div class="myproject-input-container" style="width: 300px">
+    <input type="text" id="mainModelText2" pInputText formControlName="mainModelText2" required />
+    <span *ngIf="form.controls.mainModelText2.hasError('required')">mainModelText2 is Required</span>
+  </div>
 
-    <app-sub-component1 formControlName="options1"></app-sub-component1>
-    <app-sub-component2 formControlName="options2"></app-sub-component2>
+  <app-sub-component1 formControlName="options1"></app-sub-component1>
+  <app-sub-component2 formControlName="options2"></app-sub-component2>
 
-    <div class="">
-        <p-button label="Check" (onClick)="checkForm()" />
-        <p-button label="Update Value" (onClick)="updateValue()" />
-    </div>
+  <div class="">
+    <p-button label="Check" (onClick)="checkForm()" />
+    <p-button label="Update Value" (onClick)="updateValue()" />
+  </div>
+
+  <p-fieldset legend="MainComponent Error Summary: All Errors">
+    <app-field-error-summary [form]="form" [showFormErrors]="true" [showControlErrors]="true">
+    </app-field-error-summary>
+  </p-fieldset>
 </div>

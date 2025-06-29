@@ -4,12 +4,17 @@ import { FormBuilder, FormControl, FormGroup, NG_VALIDATORS, NG_VALUE_ACCESSOR, 
 import { SharedModule } from '../../shared/shared.module';
 
 import { BaseValidatableSubComponent } from '../../shared/base-validatable-sub-component';
+import { createFormControl } from '../../shared/form-control-ex';
+import { FieldErrorListComponent } from "../common/field-error-list/field-error-list.component";
 
 @Component({
   selector: 'app-sub-component2',
   imports: [
     // Project modules
     SharedModule,
+
+    // Project components
+    FieldErrorListComponent
   ],
   templateUrl: './sub-component2.component.html',
   styleUrl: './sub-component2.component.scss',
@@ -33,7 +38,11 @@ export class SubComponent2Component extends BaseValidatableSubComponent<ISubComp
     super(myFb);
 
     this.form = new FormGroup<ISubComponent2Form>({
-      booleanOption1: new FormControl<boolean>(false, { nonNullable: true, validators: [Validators.required] })
+      booleanOption1: createFormControl<boolean>(false, {
+        displayName: 'Boolean Option 1',
+        nonNullable: true,
+        validators: [Validators.requiredTrue]
+      })
     });
   }
 }

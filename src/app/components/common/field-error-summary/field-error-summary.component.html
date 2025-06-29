@@ -1,0 +1,17 @@
+<div class="myproject-error-summary">
+  @if (showFormErrors) {
+    <app-field-error-list class="removeWrapper" [errors]="form.errors ?? []"></app-field-error-list>
+  }
+
+  @if (showControlErrors) {
+    @for (control of controlsArray(); track $index) {
+      @if (isComposite(control.errors)) {
+        @for (errorKey of errorKeys(control.errors); track $index) {
+          <app-field-error-list class="removeWrapper" [errors]="control.errors![errorKey]"></app-field-error-list>
+        }
+      } @else {
+        <app-field-error-list [sourceFormControl]="control" class="removeWrapper"></app-field-error-list>
+      }
+    }
+  }
+</div>

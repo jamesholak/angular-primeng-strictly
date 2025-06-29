@@ -8,4 +8,9 @@
     <app-main-component2 [myModel]="mainModel2"></app-main-component2>
 </p-fieldset>
 
+<p-fieldset legend="Main Component 1 #2" toggleable="true">
+    <p-button label="Bind Model" (onClick)="bindMainModel1_2()" />
+    <app-main-component [myModel]="mainModel1_2" [showCrossFieldValidationErrors]="false"></app-main-component>
+</p-fieldset>
+
 <router-outlet />

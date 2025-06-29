@@ -1,1 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
+@use "@fortawesome/fontawesome-free/css/all.min.css" as fa;
+@use "variables" as var;
+
+.myproject {
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0px;
+}
+
+.myproject-input-container, .myproject-error-summary {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+  /*width: 100%;*/
+}
+.myproject-input-container {
+  margin-bottom: 1em;
+}
+
+.myproject-error {
+  i {
+    color: var.$form-field-error-color-icon;
+  }
+  color: var.$form-field-error-color-helper-text;
+  font-size: 12px;
+}

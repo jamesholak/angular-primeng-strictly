@@ -1,4 +1,7 @@
 <p-fieldset legend="Sub-Component 2" [formGroup]="form">
-    <label for="booleanOption1">Boolean Option 1</label>
+  <label for="booleanOption1">Boolean Option 1</label>
+  <div class="myproject-input-container" style="width: 300px">
     <p-checkbox inputId="booleanOption1" formControlName="booleanOption1" [binary]="true" />
+    <app-field-error-list [sourceFormControl]="form.controls.booleanOption1"></app-field-error-list>
+  </div>
 </p-fieldset>

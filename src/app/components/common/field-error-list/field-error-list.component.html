@@ -1,0 +1,6 @@
+@for (errorKey of errorKeys(); track $index) {
+  <span class="myproject-error">
+    <i class="fa-solid fa-circle-exclamation"></i>
+    {{ getErrorMessage(errorKey) }}
+  </span>
+}

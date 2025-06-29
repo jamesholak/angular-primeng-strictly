@@ -33,9 +33,10 @@ export class AppComponent {
     mainModelText: 'Main Model 1',
     options1: {
       textOption1: 'Main Model 1 Text Option 1',
-      textOption2: 'Main Model 1 Text Option 2',
-      numberOption1: 11111,
-      numberOption2: 11112
+      textOption2: 'Main Model 1 Text Option 2 34',
+      numberOption1: null,
+      numberOption2: -11112,
+      numberOption3: 11113
     },
     options2: {
       booleanOption1: false
@@ -50,6 +51,29 @@ export class AppComponent {
   }
   mainModel1: IMyMainModel1 = { ...this.defaultMainModel1 };
 
+  readonly defaultMainModel1_2: IMyMainModel1Full = {
+    mainModelNumber: 12,
+    mainModelText: 'Main Model 1 #2',
+    options1: {
+      textOption1: 'Main Model 1 #2 Text Option 1',
+      textOption2: 'Main Model one #two Text Option 99',
+      numberOption1: 1,
+      numberOption2: 2,
+      numberOption3: 3
+    },
+    options2: {
+      booleanOption1: true
+    },
+    // Extra properties not bound by UI/the form
+    fullText: 'Full Text for Main Model 1',
+    pairs: [
+      { key: 'Key 1', value: 'Value 1' },
+      { key: 'Key 2', value: 'Value 2' },
+      { key: 'Key 3', value: 'Value 3' }
+    ]
+  }
+  mainModel1_2: IMyMainModel1 = { ...this.defaultMainModel1_2 };
+
   readonly defaultMainModel2: IMyMainModel2Full = {
     mainModelNumber2: 2222,
     mainModelText2: 'Main Model 2',
@@ -57,7 +81,8 @@ export class AppComponent {
       textOption1: 'Main Model 2 Text Option 1',
       textOption2: 'Main Model 2 Text Option 2',
       numberOption1: 22221,
-      numberOption2: 22222
+      numberOption2: 22222,
+      numberOption3: 22223
     },
     options2: {
       booleanOption1: true
@@ -72,6 +97,10 @@ export class AppComponent {
 
   bindMainModel1() {
     this.mainModel1 = { ...this.defaultMainModel1 };
+  }
+
+  bindMainModel1_2() {
+    this.mainModel1_2 = { ...this.defaultMainModel1_2 };
   }
 
   bindMainModel2() {

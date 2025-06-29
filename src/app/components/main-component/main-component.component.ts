@@ -1,12 +1,13 @@
 import { Component, Input } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
-import * as _ from 'lodash';
+import * as _ from 'lodash-es';
 
 import { SharedModule } from '../../shared/shared.module';
 import { ValidationHelper } from '../../helpers/validation-helper';
 import { IMyMainModel1, IOptionsModel1, IOptionsModel2, MyMainModel1 } from '../../models/models';
 
+import { FieldErrorSummaryComponent } from "../common/field-error-summary/field-error-summary.component";
 import { SubComponent1Component } from '../sub-component1/sub-component1.component';
 import { SubComponent2Component } from '../sub-component2/sub-component2.component';
 
@@ -17,6 +18,7 @@ import { SubComponent2Component } from '../sub-component2/sub-component2.compone
     SharedModule,
 
     // Project components
+    FieldErrorSummaryComponent,
     SubComponent1Component,
     SubComponent2Component
   ],
@@ -33,6 +35,8 @@ export class MainComponentComponent {
     this.form.setValue(newFormValue);
   }
 
+  @Input() showCrossFieldValidationErrors = true;
+
   form: FormGroup<IMainComponentForm>;
   value: IMyMainModel1 | undefined;
 
@@ -46,7 +50,8 @@ export class MainComponentComponent {
         textOption1: '',
         textOption2: '',
         numberOption1: 0,
-        numberOption2: 0
+        numberOption2: 0,
+        numberOption3: 0
       }, { nonNullable: true, validators: [Validators.required] }),
       options2: new FormControl<IOptionsModel2>({
         booleanOption1: false

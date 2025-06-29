@@ -16,7 +16,8 @@ export class MyMainModel1 implements IMyMainModel1 {
     textOption1: '',
     textOption2: '',
     numberOption1: 0,
-    numberOption2: 0
+    numberOption2: 0,
+    numberOption3: 0
   };
   options2: IOptionsModel2 = {
     booleanOption1: false
@@ -41,7 +42,8 @@ export class MyMainModel2 implements IMyMainModel2 {
     textOption1: '',
     textOption2: '',
     numberOption1: 0,
-    numberOption2: 0
+    numberOption2: 0,
+    numberOption3: 0
   };
   options2: IOptionsModel2 = {
     booleanOption1: false
@@ -55,8 +57,9 @@ export interface IMyMainModel2Full extends IMyMainModel2 {
 export interface IOptionsModel1 {
   textOption1: string;
   textOption2: string;
-  numberOption1: number;
+  numberOption1: number | null;
   numberOption2: number;
+  numberOption3: number;
 }
 
 export interface IOptionsModel2 {
