@@ -8,6 +8,7 @@ import { ValidationHelper } from '../../helpers/validation-helper';
 import { IMyMainModel2, IOptionsModel1, IOptionsModel2, MyMainModel2 } from '../../models/models';
 
 import { FieldErrorSummaryComponent } from "../common/field-error-summary/field-error-summary.component";
+import { FormValidationStatusComponent } from '../common/form-validation-status/form-validation-status.component';
 import { SubComponent1Component } from '../sub-component1/sub-component1.component';
 import { SubComponent2Component } from '../sub-component2/sub-component2.component';
 
@@ -19,6 +20,7 @@ import { SubComponent2Component } from '../sub-component2/sub-component2.compone
 
     // Project components
     FieldErrorSummaryComponent,
+    FormValidationStatusComponent,
     SubComponent1Component,
     SubComponent2Component
   ],

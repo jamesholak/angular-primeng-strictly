@@ -1,5 +1,8 @@
-<div [formGroup]="form" style="display: flex; flex-direction: column; gap: 1em; width: 400px"
-    class="project-always-show-invalid">
+<div
+  [formGroup]="form"
+  style="display: flex; flex-direction: column; gap: 1em; width: 400px"
+  class="project-always-show-invalid"
+>
   <div>
     <label for="dateOption1">dateOption1</label>
     <div class="myproject-input-container" style="width: 300px">
@@ -26,7 +29,7 @@
     </div>
   </div>
 
-  <div style="display: flex; flex-direction: column;">
+  <div style="display: flex; flex-direction: column">
     <label for="selectOption1">selectOption1</label>
     <p-select formControlName="selectOption1" [options]="selectOptions1Options" optionLabel="key" [showClear]="true" />
   </div>
@@ -47,7 +50,5 @@
     <p-button label="Check" (onClick)="checkForm()" />
   </div>
 
-  <span [style]="this.form.valid ? 'color: green;' : 'color: red;'">{{
-    this.form.valid ? "Form Is Valid" : "Form Is Invalid"
-  }}</span>
+  <app-form-validation-status [form]="form"></app-form-validation-status>
 </div>

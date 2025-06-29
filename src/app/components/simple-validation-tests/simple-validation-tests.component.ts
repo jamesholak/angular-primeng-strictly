@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+
+import { SharedModule } from '../../shared/shared.module';
 
 import { FieldErrorListComponent } from "../common/field-error-list/field-error-list.component";
-import { SharedModule } from '../../shared/shared.module';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { createFormControl, createFormControlNullable } from '../../shared/form-control-ex';
+import { FormValidationStatusComponent } from '../common/form-validation-status/form-validation-status.component';
 import { IKeyValuePair } from '../../models/models';
-
+import { createFormControl, createFormControlNullable } from '../../shared/form-control-ex';
 
 @Component({
   selector: 'app-simple-validation-tests',
@@ -14,7 +15,8 @@ import { IKeyValuePair } from '../../models/models';
     SharedModule,
 
     // Project components
-    FieldErrorListComponent
+    FieldErrorListComponent,
+    FormValidationStatusComponent
   ],
   templateUrl: './simple-validation-tests.component.html',
   styleUrl: './simple-validation-tests.component.scss'
