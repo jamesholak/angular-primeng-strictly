@@ -8,6 +8,7 @@ import { DatePickerModule } from 'primeng/datepicker';
 import { FieldsetModule } from 'primeng/fieldset';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { InputTextModule } from 'primeng/inputtext';
+import { MessageModule } from 'primeng/message';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { SelectModule } from 'primeng/select';
 import { TabsModule } from 'primeng/tabs';
@@ -28,6 +29,7 @@ import { TextareaModule } from 'primeng/textarea';
     FieldsetModule,
     InputNumberModule,
     InputTextModule,
+    MessageModule,
     RadioButtonModule,
     SelectModule,
     TabsModule,
@@ -46,6 +48,7 @@ import { TextareaModule } from 'primeng/textarea';
     FieldsetModule,
     InputNumberModule,
     InputTextModule,
+    MessageModule,
     RadioButtonModule,
     SelectModule,
     TabsModule,

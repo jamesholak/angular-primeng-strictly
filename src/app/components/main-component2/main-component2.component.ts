@@ -37,6 +37,11 @@ export class MainComponent2Component {
     this.form.setValue(newFormValue);
   }
 
+  /**
+  * If true, the errors will be displayed as a p-message.
+  */
+  @Input() showErrorSummaryAsMessage: boolean = false;
+
   form: FormGroup<IMainComponent2Form>;
   value: IMyMainModel2 | undefined;
 

@@ -1,6 +1,14 @@
-@for (errorKey of errorKeys(); track $index) {
-  <span class="myproject-error">
-    <i class="fa-solid fa-circle-exclamation"></i>
-    {{ getErrorMessage(errorKey) }}
-  </span>
+@if (showAsMessage) {
+  @for (errorKey of errorKeys(); track $index) {
+    <p-message severity="error" icon="fa-solid fa-circle-exclamation">
+      {{ getErrorMessage(errorKeys()[0]) }}
+    </p-message>
+  }
+} @else {
+  @for (errorKey of errorKeys(); track $index) {
+    <span class="myproject-error">
+      <i class="fa-solid fa-circle-exclamation"></i>
+      {{ getErrorMessage(errorKey) }}
+    </span>
+  }
 }

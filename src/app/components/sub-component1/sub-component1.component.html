@@ -30,15 +30,18 @@
   </div>
 
   <p-fieldset legend="SubComponent1 Error Summary: Only Form Errors">
-    <app-field-error-summary [form]="form" [showFormErrors]="true" [showControlErrors]="false">
+    <app-field-error-summary [form]="form" [showFormErrors]="true" [showControlErrors]="false"
+      [showAsMessage]="showErrorSummaryAsMessage">
     </app-field-error-summary>
   </p-fieldset>
   <p-fieldset legend="SubComponent1 Error Summary: Only Control Errors">
-    <app-field-error-summary [form]="form" [showFormErrors]="false" [showControlErrors]="true">
+    <app-field-error-summary [form]="form" [showFormErrors]="false" [showControlErrors]="true"
+      [showAsMessage]="showErrorSummaryAsMessage">
     </app-field-error-summary>
   </p-fieldset>
   <p-fieldset legend="SubComponent1 Error Summary: All Errors">
-    <app-field-error-summary [form]="form" [showFormErrors]="true" [showControlErrors]="true">
+    <app-field-error-summary [form]="form" [showFormErrors]="true" [showControlErrors]="true"
+      [showAsMessage]="showErrorSummaryAsMessage">
     </app-field-error-summary>
   </p-fieldset>
 </p-fieldset>

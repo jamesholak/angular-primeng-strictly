@@ -16,6 +16,10 @@ import { ValidationHelper } from '../../../helpers/validation-helper';
 })
 export class FieldErrorListComponent {
   @Input() displayName?: string;
+  /**
+   * If true, the errors will be displayed as a p-message.
+   */
+  @Input() showAsMessage: boolean = false;
 
   /**
    * Sets the errors to display.  This will also set the display name if it exists in the errors.

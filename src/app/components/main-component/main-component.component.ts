@@ -39,6 +39,11 @@ export class MainComponentComponent {
 
   @Input() showCrossFieldValidationErrors = true;
 
+  /**
+  * If true, the errors will be displayed as a p-message.
+  */
+  @Input() showErrorSummaryAsMessage: boolean = false;
+
   form: FormGroup<IMainComponentForm>;
   value: IMyMainModel1 | undefined;
 

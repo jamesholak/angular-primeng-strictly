@@ -34,6 +34,10 @@ import { createFormControl, createFormControlNullable } from '../../shared/form-
 })
 export class SubComponent1Component extends BaseValidatableSubComponent<ISubComponent1Form> {
   @Input() showCrossFieldValidationErrors = true;
+  /**
+ * If true, the errors will be displayed as a p-message.
+ */
+  @Input() showErrorSummaryAsMessage: boolean = false;
 
   form: FormGroup<ISubComponent1Form>;
 

@@ -41,3 +41,15 @@
     }
   }
 }
+
+/* Overriding Styles */
+.project {
+  .p-message-error {
+    background: #fff0f0;
+    color: #ce363a;
+    border-radius: 9px;
+    .p-message-content {
+      padding: 12px 9px 12px 12px;
+    }
+  }
+}

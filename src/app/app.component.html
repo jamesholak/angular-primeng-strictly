@@ -8,7 +8,7 @@
       <p-tabpanel value="0" class="project-always-show-invalid">
         <p-fieldset legend="Main Component 1" toggleable="true">
           <p-button label="Bind Model" (onClick)="bindMainModel1()" />
-          <app-main-component [myModel]="mainModel1"></app-main-component>
+          <app-main-component [myModel]="mainModel1" [showErrorSummaryAsMessage]="true"></app-main-component>
         </p-fieldset>
 
         <p-fieldset legend="Main Component 2" toggleable="true">

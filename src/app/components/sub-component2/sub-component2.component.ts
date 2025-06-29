@@ -1,4 +1,4 @@
-import { Component, forwardRef } from '@angular/core';
+import { Component, forwardRef, Input } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, NG_VALIDATORS, NG_VALUE_ACCESSOR, Validators } from '@angular/forms';
 
 import { SharedModule } from '../../shared/shared.module';
@@ -32,6 +32,11 @@ import { FieldErrorListComponent } from "../common/field-error-list/field-error-
   ]
 })
 export class SubComponent2Component extends BaseValidatableSubComponent<ISubComponent2Form> {
+  /**
+ * If true, the errors will be displayed as a p-message.
+ */
+  @Input() showErrorSummaryAsMessage: boolean = false;
+
   form: FormGroup<ISubComponent2Form>;
 
   constructor(private myFb: FormBuilder) {

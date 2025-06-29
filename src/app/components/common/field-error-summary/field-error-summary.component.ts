@@ -32,6 +32,11 @@ export class FieldErrorSummaryComponent {
   @Input() showFormErrors = true;
   @Input() showControlErrors = true;
 
+  /**
+ * If true, the errors will be displayed as a p-message.
+ */
+  @Input() showAsMessage: boolean = false;
+
   controlsArray(): AbstractControl<any>[] {
     return Object.values(this.form.controls);
   }

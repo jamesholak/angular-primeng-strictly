@@ -19,8 +19,10 @@
     </div>
   </div>
 
-  <app-sub-component1 formControlName="options1"></app-sub-component1>
-  <app-sub-component2 formControlName="options2"></app-sub-component2>
+  <app-sub-component1 formControlName="options1" [showErrorSummaryAsMessage]="showErrorSummaryAsMessage">
+  </app-sub-component1>
+  <app-sub-component2 formControlName="options2" [showErrorSummaryAsMessage]="showErrorSummaryAsMessage">
+  </app-sub-component2>
 
   <div>
     <p-button label="Check" (onClick)="checkForm()" [style]="{ 'margin-right': '1em' }" />
