@@ -5,9 +5,9 @@ import { SharedModule } from '../../shared/shared.module';
 
 import { BaseValidatableSubComponent } from '../../shared/base-validatable-sub-component';
 import { FieldErrorListComponent } from "../common/field-error-list/field-error-list.component";
+import { FieldErrorSummaryComponent } from "../common/field-error-summary/field-error-summary.component";
 import { ValidationHelper } from '../../helpers/validation-helper';
 import { createFormControl, createFormControlNullable } from '../../shared/form-control-ex';
-import { FieldErrorSummaryComponent } from "../common/field-error-summary/field-error-summary.component";
 
 @Component({
   selector: 'app-sub-component1',

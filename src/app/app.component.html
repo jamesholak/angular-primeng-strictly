@@ -1,16 +1,32 @@
-<p-fieldset legend="Main Component 1" toggleable="true">
-    <p-button label="Bind Model" (onClick)="bindMainModel1()" />
-    <app-main-component [myModel]="mainModel1"></app-main-component>
-</p-fieldset>
+<div class="project">
+  <p-tabs value="1">
+    <p-tablist>
+      <p-tab value="0">SubComponent</p-tab>
+      <p-tab value="1">Simple Validation Tests</p-tab>
+    </p-tablist>
+    <p-tabpanels>
+      <p-tabpanel value="0" class="project-always-show-invalid">
+        <p-fieldset legend="Main Component 1" toggleable="true">
+          <p-button label="Bind Model" (onClick)="bindMainModel1()" />
+          <app-main-component [myModel]="mainModel1"></app-main-component>
+        </p-fieldset>
 
-<p-fieldset legend="Main Component 2" toggleable="true">
-    <p-button label="Bind Model" (onClick)="bindMainModel2()" />
-    <app-main-component2 [myModel]="mainModel2"></app-main-component2>
-</p-fieldset>
+        <p-fieldset legend="Main Component 2" toggleable="true">
+          <p-button label="Bind Model" (onClick)="bindMainModel2()" />
+          <app-main-component2 [myModel]="mainModel2"></app-main-component2>
+        </p-fieldset>
 
-<p-fieldset legend="Main Component 1 #2" toggleable="true">
-    <p-button label="Bind Model" (onClick)="bindMainModel1_2()" />
-    <app-main-component [myModel]="mainModel1_2" [showCrossFieldValidationErrors]="false"></app-main-component>
-</p-fieldset>
+        <p-fieldset legend="Main Component 1 #2" toggleable="true">
+          <p-button label="Bind Model" (onClick)="bindMainModel1_2()" />
+          <app-main-component [myModel]="mainModel1_2" [showCrossFieldValidationErrors]="false"></app-main-component>
+        </p-fieldset>
+      </p-tabpanel>
 
-<router-outlet />
+      <p-tabpanel value="1">
+        <app-simple-validation-tests></app-simple-validation-tests>
+      </p-tabpanel>
+    </p-tabpanels>
+  </p-tabs>
+
+  <router-outlet />
+</div>

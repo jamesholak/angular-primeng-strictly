@@ -1,0 +1,53 @@
+<div [formGroup]="form" style="display: flex; flex-direction: column; gap: 1em; width: 400px"
+    class="project-always-show-invalid">
+  <div>
+    <label for="dateOption1">dateOption1</label>
+    <div class="myproject-input-container" style="width: 300px">
+      <p-datepicker type="date" id="dateOption1" formControlName="dateOption1" required />
+      <app-field-error-list [sourceFormControl]="form.controls.dateOption1"></app-field-error-list>
+    </div>
+  </div>
+
+  <div>
+    <label for="numberOption1">numberOption1</label>
+    <div class="myproject-input-container" style="width: 300px">
+      <p-inputnumber inputId="numberOption1" required formControlName="numberOption1" />
+      <app-field-error-list [sourceFormControl]="form.controls.numberOption1"></app-field-error-list>
+    </div>
+  </div>
+
+  <div>
+    <div
+      *ngFor="let option of selectOptions1Options"
+      style="vertical-align: middle; line-height: 100%; margin: 0.25em 0"
+    >
+      <p-radiobutton [inputId]="option.key" [value]="option" formControlName="radioButtonOption1" required />
+      <label [for]="option.key" style="margin-left: 0.5em">{{ option.value }}</label>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: column;">
+    <label for="selectOption1">selectOption1</label>
+    <p-select formControlName="selectOption1" [options]="selectOptions1Options" optionLabel="key" [showClear]="true" />
+  </div>
+
+  <div>
+    <textarea rows="3" cols="30" pTextarea formControlName="textareaOption1" required></textarea>
+  </div>
+
+  <div>
+    <label for="textOption1">textOption1</label>
+    <div class="myproject-input-container" style="width: 300px">
+      <input type="text" id="textOption1" pInputText formControlName="textOption1" required />
+      <app-field-error-list [sourceFormControl]="form.controls.textOption1"></app-field-error-list>
+    </div>
+  </div>
+
+  <div>
+    <p-button label="Check" (onClick)="checkForm()" />
+  </div>
+
+  <span [style]="this.form.valid ? 'color: green;' : 'color: red;'">{{
+    this.form.valid ? "Form Is Valid" : "Form Is Invalid"
+  }}</span>
+</div>

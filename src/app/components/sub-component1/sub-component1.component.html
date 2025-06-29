@@ -13,7 +13,7 @@
 
   <label for="numberOption1">numberOption1</label>
   <div class="myproject-input-container" style="width: 300px">
-    <p-inputnumber inputId="numberOption1" required="true" formControlName="numberOption1" />
+    <p-inputnumber inputId="numberOption1" [required]="true" formControlName="numberOption1" />
     <app-field-error-list [sourceFormControl]="form.controls.numberOption1"></app-field-error-list>
   </div>
 

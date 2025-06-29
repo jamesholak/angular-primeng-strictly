@@ -1,0 +1,43 @@
+/* 
+ * Remove .ng-dirty requirement because if it is invalid it should always display that way.
+ * Attempting to keep these in alphabetical order.
+ */
+.project {
+  .project-always-show-invalid {
+    p-checkBox.ng-invalid .p-checkbox-box,
+    p-check-box.ng-invalid .p-checkbox-box,
+    p-checkbox.ng-invalid .p-checkbox-box {
+      border-color: var(--p-checkbox-invalid-border-color);
+    }
+
+    p-datePicker.ng-invalid .p-datepicker.p-inputwrapper .p-inputtext,
+    p-date-picker.ng-invalid .p-datepicker.p-inputwrapper .p-inputtext,
+    p-datepicker.ng-invalid .p-datepicker.p-inputwrapper .p-inputtext {
+      border-color: var(--p-inputtext-invalid-border-color);
+    }
+
+    p-inputNumber.ng-invalid > .p-inputtext,
+    p-input-number.ng-invalid > .p-inputtext,
+    p-inputnumber.ng-invalid > .p-inputtext {
+      border-color: var(--p-inputtext-invalid-border-color);
+    }
+
+    .p-inputtext.ng-invalid {
+      border-color: var(--p-inputtext-invalid-border-color);
+    }
+
+    p-radioButton.ng-invalid .p-radiobutton-box,
+    p-radio-button.ng-invalid .p-radiobutton-box,
+    p-radiobutton.ng-invalid .p-radiobutton-box {
+      border-color: var(--p-radiobutton-invalid-border-color);
+    }
+
+    .p-select.ng-invalid {
+      border-color: var(--p-select-invalid-border-color);
+    }
+
+    .p-textarea.ng-invalid {
+      border-color: var(--p-textarea-invalid-border-color);
+    }
+  }
+}

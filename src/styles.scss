@@ -1,5 +1,6 @@
 @use "@fortawesome/fontawesome-free/css/all.min.css" as fa;
-@use "variables" as var;
+@use "styles/variables" as var;
+@use "styles/primeng" as pex;
 
 .myproject {
   font-family: Roboto;

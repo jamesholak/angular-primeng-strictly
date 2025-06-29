@@ -65,3 +65,8 @@ export interface IOptionsModel1 {
 export interface IOptionsModel2 {
   booleanOption1: boolean;
 }
+
+export interface IKeyValuePair {
+  key: string;
+  value: any;
+}

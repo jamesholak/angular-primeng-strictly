@@ -3,10 +3,11 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 import { SharedModule } from './shared/shared.module';
+import { IMyMainModel1, IMyMainModel1Full, IMyMainModel2, IMyMainModel2Full } from './models/models';
 
 import { MainComponentComponent } from './components/main-component/main-component.component';
 import { MainComponent2Component } from './components/main-component2/main-component2.component';
-import { IMyMainModel1, IMyMainModel1Full, IMyMainModel2, IMyMainModel2Full } from './models/models';
+import { SimpleValidationTestsComponent } from './components/simple-validation-tests/simple-validation-tests.component';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +21,8 @@ import { IMyMainModel1, IMyMainModel1Full, IMyMainModel2, IMyMainModel2Full } fr
 
     // Project components
     MainComponentComponent,
-    MainComponent2Component
+    MainComponent2Component,
+    SimpleValidationTestsComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

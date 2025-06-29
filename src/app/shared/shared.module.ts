@@ -4,9 +4,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ButtonModule } from 'primeng/button';
 import { CheckboxModule } from 'primeng/checkbox';
+import { DatePickerModule } from 'primeng/datepicker';
 import { FieldsetModule } from 'primeng/fieldset';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { InputTextModule } from 'primeng/inputtext';
+import { RadioButtonModule } from 'primeng/radiobutton';
+import { SelectModule } from 'primeng/select';
+import { TabsModule } from 'primeng/tabs';
+import { TextareaModule } from 'primeng/textarea';
 
 @NgModule({
   declarations: [],
@@ -19,9 +24,14 @@ import { InputTextModule } from 'primeng/inputtext';
     // PrimeNG components
     ButtonModule,
     CheckboxModule,
+    DatePickerModule,
     FieldsetModule,
     InputNumberModule,
-    InputTextModule
+    InputTextModule,
+    RadioButtonModule,
+    SelectModule,
+    TabsModule,
+    TextareaModule
   ],
   imports: [
     // Angular modules
@@ -32,9 +42,14 @@ import { InputTextModule } from 'primeng/inputtext';
     // PrimeNG modules
     ButtonModule,
     CheckboxModule,
+    DatePickerModule,
     FieldsetModule,
     InputNumberModule,
-    InputTextModule
+    InputTextModule,
+    RadioButtonModule,
+    SelectModule,
+    TabsModule,
+    TextareaModule
   ]
 })
 export class SharedModule { }
