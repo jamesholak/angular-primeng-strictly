@@ -3,17 +3,17 @@ import { ControlContainer, FormBuilder, FormControl, FormGroup, FormGroupDirecti
 
 import * as _ from 'lodash-es';
 
-import { SharedModule } from '../../shared/shared.module';
-import { ValidationHelper } from '../../helpers/validation-helper';
-import { IMyMainModel1, IOptionsModel1, IOptionsModel2, MyMainModel1 } from '../../models/models';
+import { SharedModule } from '../../../shared/shared.module';
+import { ValidationHelper } from '../../../helpers/validation-helper';
+import { IMyMainModel1, IOptionsModel1, IOptionsModel2, MyMainModel1 } from '../../../models/models';
 
-import { FieldErrorSummaryComponent } from "../common/field-error-summary/field-error-summary.component";
-import { FormValidationStatusComponent } from '../common/form-validation-status/form-validation-status.component';
-import { SubComponent1Component } from '../sub-component1/sub-component1.component';
-import { SubComponent2Component } from '../sub-component2/sub-component2.component';
+import { FieldErrorSummaryComponent } from "../../common/field-error-summary/field-error-summary.component";
+import { FormValidationStatusComponent } from '../../common/form-validation-status/form-validation-status.component';
+import { ISubComponent1Form, SubComponent1Component } from '../sub-component1/sub-component1.component';
+import { ISubComponent2Form, SubComponent2Component } from '../sub-component2/sub-component2.component';
 
 @Component({
-  selector: 'app-main-component',
+  selector: 'app-poc2-main-component1',
   imports: [
     // Project modules
     SharedModule,
@@ -24,11 +24,10 @@ import { SubComponent2Component } from '../sub-component2/sub-component2.compone
     SubComponent1Component,
     SubComponent2Component
   ],
-  templateUrl: './main-component.component.html',
-  styleUrl: './main-component.component.scss',
-  viewProviders: [{ provide: ControlContainer, useExisting: FormGroupDirective }]
+  templateUrl: './poc2-main-component1.component.html',
+  styleUrl: './poc2-main-component1.component.scss'
 })
-export class MainComponentComponent {
+export class Poc2MainComponent1Component {
   @Input() set myModel(value: IMyMainModel1) {
     this.value = value;
 
@@ -54,19 +53,8 @@ export class MainComponentComponent {
     this.form = this.fb.group({
       mainModelNumber: new FormControl<number>(0, { nonNullable: true, validators: [Validators.required] }),
       mainModelText: new FormControl<string>('', { nonNullable: true, validators: [Validators.required] }),
-      options1: new FormControl<IOptionsModel1>({
-        textOption1: '',
-        textOption2: '',
-        numberOption1: 0,
-        numberOption2: 0,
-        numberOption3: 0,
-        options3rdLevel: {
-          dateOption1: null
-        }
-      }, { nonNullable: true, validators: [Validators.required] }),
-      options2: new FormControl<IOptionsModel2>({
-        booleanOption1: false
-      }, { nonNullable: true, validators: [Validators.required] })
+      options1: SubComponent1Component.createFormGroup(this.showCrossFieldValidationErrors),
+      options2: SubComponent2Component.createFormGroup()
     });
   }
 
@@ -88,6 +76,6 @@ export class MainComponentComponent {
 interface IMainComponentForm {
   mainModelNumber: FormControl<number>;
   mainModelText: FormControl<string>;
-  options1: FormControl<IOptionsModel1>;
-  options2: FormControl<IOptionsModel2>;
+  options1: FormGroup<ISubComponent1Form>;
+  options2: FormGroup<ISubComponent2Form>;
 }

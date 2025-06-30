@@ -1,0 +1,77 @@
+<p-fieldset legend="Sub-Component 1" [formGroup]="form">
+  <div>
+    <label for="textOption1">My Text</label>
+    <div class="myproject-input-container" style="width: 300px">
+      <input type="text" id="textOption1" pInputText formControlName="textOption1" required />
+      <app-field-error-list [sourceFormControl]="form.controls.textOption1"></app-field-error-list>
+    </div>
+  </div>
+
+  <div>
+    <label for="textOption2">My Text</label>
+    <div class="myproject-input-container" style="width: 300px">
+      <input type="text" id="textOption2" pInputText formControlName="textOption2" required />
+      <app-field-error-list [sourceFormControl]="form.controls.textOption2"></app-field-error-list>
+    </div>
+  </div>
+
+  <div>
+    <label for="numberOption1">numberOption1</label>
+    <div class="myproject-input-container" style="width: 300px">
+      <p-inputnumber inputId="numberOption1" [required]="true" formControlName="numberOption1" />
+      <app-field-error-list [sourceFormControl]="form.controls.numberOption1"></app-field-error-list>
+    </div>
+  </div>
+
+  <div>
+    <label for="numberOption2">numberOption2</label>
+    <div class="myproject-input-container" style="width: 300px">
+      <p-inputnumber inputId="numberOption2" required="true" formControlName="numberOption2" />
+      <app-field-error-list [sourceFormControl]="form.controls.numberOption2"></app-field-error-list>
+    </div>
+  </div>
+
+  <div>
+    <label for="numberOption3">numberOption3</label>
+    <div class="myproject-input-container" style="width: 300px">
+      <p-inputnumber inputId="numberOption3" required="true" formControlName="numberOption3" />
+      <app-field-error-list [sourceFormControl]="form.controls.numberOption3"></app-field-error-list>
+    </div>
+  </div>
+
+  <app-poc2-sub-component3rd-level [form]="form.controls.options3rdLevel"></app-poc2-sub-component3rd-level>
+
+  <p-fieldset legend="SubComponent1 Error Summary: Only Form Errors">
+    <app-field-error-summary
+      [form]="form"
+      [showFormErrors]="true"
+      [showControlErrors]="false"
+      [showAsMessage]="showErrorSummaryAsMessage"
+      debugName="SubComponent1"
+      [isPoc2]="true"
+    >
+    </app-field-error-summary>
+  </p-fieldset>
+  <p-fieldset legend="SubComponent1 Error Summary: Only Control Errors">
+    <app-field-error-summary
+      [form]="form"
+      [showFormErrors]="false"
+      [showControlErrors]="true"
+      [showAsMessage]="showErrorSummaryAsMessage"
+      debugName="SubComponent1"
+      [isPoc2]="true"
+    >
+    </app-field-error-summary>
+  </p-fieldset>
+  <p-fieldset legend="SubComponent1 Error Summary: All Errors">
+    <app-field-error-summary
+      [form]="form"
+      [showFormErrors]="true"
+      [showControlErrors]="true"
+      [showAsMessage]="showErrorSummaryAsMessage"
+      debugName="SubComponent1"
+      [isPoc2]="true"
+    >
+    </app-field-error-summary>
+  </p-fieldset>
+</p-fieldset>

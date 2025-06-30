@@ -1,0 +1,45 @@
+<div
+  [formGroup]="form"
+  style="display: flex; flex-direction: column; gap: 1em; width: 400px"
+  class="project-always-show-invalid"
+>
+  <div>
+    <label for="mainModelNumber">mainModelNumber</label>
+    <div class="myproject-input-container" style="width: 300px">
+      <p-inputnumber inputId="mainModelNumber" required="true" formControlName="mainModelNumber" />
+      <span *ngIf="form.controls.mainModelNumber.hasError('required')">mainModelNumber is Required</span>
+    </div>
+  </div>
+
+  <div>
+    <label for="mainModelText">mainModelText</label>
+    <div class="myproject-input-container" style="width: 300px">
+      <input type="text" id="mainModelText" pInputText formControlName="mainModelText" required />
+      <span *ngIf="form.controls.mainModelText.hasError('required')">mainModelText is Required</span>
+    </div>
+  </div>
+
+  <app-poc2-sub-component1
+    [form]="form.controls.options1"
+    [showCrossFieldValidationErrors]="showCrossFieldValidationErrors"
+    [showErrorSummaryAsMessage]="showErrorSummaryAsMessage"
+  >
+  </app-poc2-sub-component1>
+  <app-poc2-sub-component2
+    [form]="form.controls.options2"
+    [showErrorSummaryAsMessage]="showErrorSummaryAsMessage"
+  ></app-poc2-sub-component2>
+
+  <div>
+    <p-button label="Check" (onClick)="checkForm()" [style]="{ 'margin-right': '1em' }" />
+    <p-button label="Update Value" (onClick)="updateValue()" />
+  </div>
+
+  <app-form-validation-status [form]="form"></app-form-validation-status>
+
+  <p-fieldset legend="MainComponent Error Summary: All Errors">
+    <app-field-error-summary [form]="form" [showFormErrors]="true" [showControlErrors]="true"
+      [showAsMessage]="showErrorSummaryAsMessage" debugName="MainComponent1" [isPoc2]="true">
+    </app-field-error-summary>
+  </p-fieldset>
+</div>

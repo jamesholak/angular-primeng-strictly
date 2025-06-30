@@ -1,11 +1,11 @@
 import { Component, forwardRef, Input } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, NG_VALIDATORS, NG_VALUE_ACCESSOR, Validators } from '@angular/forms';
 
-import { SharedModule } from '../../shared/shared.module';
+import { SharedModule } from '../../../shared/shared.module';
 
-import { BaseValidatableSubComponent } from '../../shared/base-validatable-sub-component';
-import { createFormControl } from '../../shared/form-control-ex';
-import { FieldErrorListComponent } from "../common/field-error-list/field-error-list.component";
+import { BaseValidatableSubComponent } from '../../../shared/base-validatable-sub-component';
+import { createFormControl } from '../../../shared/form-control-ex';
+import { FieldErrorListComponent } from "../../common/field-error-list/field-error-list.component";
 
 @Component({
   selector: 'app-sub-component2',

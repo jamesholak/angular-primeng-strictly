@@ -1,16 +1,16 @@
 import { Component, forwardRef, Input } from '@angular/core';
 import { AbstractControl, ControlContainer, FormBuilder, FormControl, FormGroup, FormGroupDirective, NG_VALIDATORS, NG_VALUE_ACCESSOR, NgForm, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 
-import { SharedModule } from '../../shared/shared.module';
+import { SharedModule } from '../../../shared/shared.module';
 
-import { BaseValidatableSubComponent } from '../../shared/base-validatable-sub-component';
-import { createFormControl, createFormControlNullable } from '../../shared/form-control-ex';
-import { FieldErrorListComponent } from "../common/field-error-list/field-error-list.component";
-import { FieldErrorSummaryComponent } from "../common/field-error-summary/field-error-summary.component";
-import { ValidationHelper } from '../../helpers/validation-helper';
+import { BaseValidatableSubComponent } from '../../../shared/base-validatable-sub-component';
+import { createFormControl, createFormControlNullable } from '../../../shared/form-control-ex';
+import { FieldErrorListComponent } from "../../common/field-error-list/field-error-list.component";
+import { FieldErrorSummaryComponent } from "../../common/field-error-summary/field-error-summary.component";
+import { ValidationHelper } from '../../../helpers/validation-helper';
 
 import { SubComponent3rdLevelComponent } from '../sub-component3rd-level/sub-component3rd-level.component';
-import { IOptions3rdLevel } from '../../models/models';
+import { IOptions3rdLevel } from '../../../models/models';
 
 @Component({
   selector: 'app-sub-component1',
