@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { AbstractControl, FormGroup, ValidationErrors } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, ValidationErrors } from '@angular/forms';
 
 import { SharedModule } from '../../../shared/shared.module';
 
@@ -31,6 +31,8 @@ export class FieldErrorSummaryComponent {
 
   @Input() showFormErrors = true;
   @Input() showControlErrors = true;
+  @Input() debugName: string = '';
+  @Input() isPoc2: boolean = false;
 
   /**
  * If true, the errors will be displayed as a p-message.
@@ -54,6 +56,9 @@ export class FieldErrorSummaryComponent {
   }
 
   getErrorList() {
+    if (this.isPoc2) {
+      return this.getErrorListForPoc2();
+    }
     const list: ErrorData[] = [];
     this.controlsArray().forEach(control => {
       const errors = control.errors;
@@ -78,6 +83,32 @@ export class FieldErrorSummaryComponent {
       }
     });
     return list;
+  }
+
+  getErrorListForPoc2(): ErrorData[] {
+    // Just flatten the list of FormGroup, FormControls, etc.
+    const list: ErrorData[] = [];
+    this.addToErrorDataListForPoc2(this.form, list);
+    return list;
+  }
+
+  addToErrorDataListForPoc2(control: AbstractControl<any>, list: ErrorData[]) {
+    if (!control) { // this shouldn't happen.
+      return;
+    }
+    if (control.errors) {
+      const errorData = new ErrorData();
+      errorData.isComposite = false; // to use the control to initialize the field error list.
+      errorData.control = control;
+      list.push(errorData);
+    }
+
+    var fg = control as FormGroup<any>;
+    if (fg.controls) {
+      Object.keys(fg.controls).forEach(controlKey => {
+        this.addToErrorDataListForPoc2(fg.controls[controlKey], list);
+      });
+    }
   }
 
   private addToErrorDataList(errors: ValidationErrors | null, list: ErrorData[]) {

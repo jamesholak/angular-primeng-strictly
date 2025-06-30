@@ -1,8 +1,9 @@
 <div class="project">
-  <p-tabs value="0">
+  <p-tabs value="1">
     <p-tablist>
-      <p-tab value="0">SubComponent</p-tab>
-      <p-tab value="1">Simple Validation Tests</p-tab>
+      <p-tab value="0">SubComponent POC1</p-tab>
+      <p-tab value="1">SubComponent POC1</p-tab>
+      <p-tab value="2">Simple Validation Tests</p-tab>
     </p-tablist>
     <p-tabpanels>
       <p-tabpanel value="0" class="project-always-show-invalid">
@@ -22,7 +23,24 @@
         </p-fieldset>
       </p-tabpanel>
 
-      <p-tabpanel value="1">
+      <p-tabpanel value="1" class="project-always-show-invalid">
+        <p-fieldset legend="Main Component 1" toggleable="true">
+          <p-button label="Bind Model" (onClick)="bindMainModel1()" />
+          <app-poc2-main-component1 [myModel]="mainModel1" [showErrorSummaryAsMessage]="true"></app-poc2-main-component1>
+        </p-fieldset>
+
+        <p-fieldset legend="Main Component 2" toggleable="true">
+          <p-button label="Bind Model" (onClick)="bindMainModel2()" />
+          <app-poc2-main-component2 [myModel]="mainModel2"></app-poc2-main-component2>
+        </p-fieldset>
+
+        <p-fieldset legend="Main Component 1 #2" toggleable="true">
+          <p-button label="Bind Model" (onClick)="bindMainModel1_2()" />
+          <app-poc2-main-component1 [myModel]="mainModel1_2" [showCrossFieldValidationErrors]="false"></app-poc2-main-component1>
+        </p-fieldset>
+      </p-tabpanel>
+
+      <p-tabpanel value="2">
         <app-simple-validation-tests></app-simple-validation-tests>
       </p-tabpanel>
     </p-tabpanels>

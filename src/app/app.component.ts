@@ -5,8 +5,10 @@ import { RouterOutlet } from '@angular/router';
 import { SharedModule } from './shared/shared.module';
 import { IMyMainModel1, IMyMainModel1Full, IMyMainModel2, IMyMainModel2Full } from './models/models';
 
-import { MainComponentComponent } from './components/main-component/main-component.component';
-import { MainComponent2Component } from './components/main-component2/main-component2.component';
+import { MainComponentComponent } from './components/poc1/main-component/main-component.component';
+import { MainComponent2Component } from './components/poc1/main-component2/main-component2.component';
+import { Poc2MainComponent1Component } from './components/poc2-formgroup/poc2-main-component1/poc2-main-component1.component';
+import { Poc2MainComponent2Component } from './components/poc2-formgroup/poc2-main-component2/poc2-main-component2.component';
 import { SimpleValidationTestsComponent } from './components/simple-validation-tests/simple-validation-tests.component';
 
 @Component({
@@ -22,6 +24,8 @@ import { SimpleValidationTestsComponent } from './components/simple-validation-t
     // Project components
     MainComponentComponent,
     MainComponent2Component,
+    Poc2MainComponent1Component,
+    Poc2MainComponent2Component,
     SimpleValidationTestsComponent
   ],
   templateUrl: './app.component.html',
