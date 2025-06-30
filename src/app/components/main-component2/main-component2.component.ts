@@ -56,7 +56,10 @@ export class MainComponent2Component {
         textOption2: '',
         numberOption1: 0,
         numberOption2: 0,
-        numberOption3: 0
+        numberOption3: 0,
+        options3rdLevel: {
+          dateOption1: null
+        }
       }, { nonNullable: true, validators: [Validators.required] }),
       options2: new FormControl<IOptionsModel2>({
         booleanOption1: false

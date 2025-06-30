@@ -38,7 +38,10 @@ export class AppComponent {
       textOption2: 'Main Model 1 Text Option 2 34',
       numberOption1: null,
       numberOption2: -11112,
-      numberOption3: 11113
+      numberOption3: 11113,
+      options3rdLevel: {
+        dateOption1: null
+      }
     },
     options2: {
       booleanOption1: false
@@ -61,7 +64,10 @@ export class AppComponent {
       textOption2: 'Main Model one #two Text Option 99',
       numberOption1: 1,
       numberOption2: 2,
-      numberOption3: 3
+      numberOption3: 3,
+      options3rdLevel: {
+        dateOption1: new Date()
+      }
     },
     options2: {
       booleanOption1: true
@@ -84,7 +90,10 @@ export class AppComponent {
       textOption2: 'Main Model 2 Text Option 2',
       numberOption1: 22221,
       numberOption2: 22222,
-      numberOption3: 22223
+      numberOption3: 22223,
+      options3rdLevel: {
+        dateOption1: new Date()
+      }
     },
     options2: {
       booleanOption1: true

@@ -5,14 +5,16 @@
   }
 
   @if (showControlErrors) {
-    @for (control of controlsArray(); track $index) {
-      @if (isComposite(control.errors)) {
-        @for (errorKey of errorKeys(control.errors); track $index) {
-          <app-field-error-list class="removeWrapper" [errors]="control.errors![errorKey]" [showAsMessage]="showAsMessage">
-          </app-field-error-list>
-        }
+    @for (error of getErrorList(); track $index) {
+      @if (error.isComposite) {
+        <app-field-error-list class="removeWrapper" [errors]="error.errors!" [showAsMessage]="showAsMessage">
+        </app-field-error-list>
       } @else {
-        <app-field-error-list [sourceFormControl]="control" class="removeWrapper" [showAsMessage]="showAsMessage">
+        <app-field-error-list
+          [sourceFormControl]="error.control!"
+          class="removeWrapper"
+          [showAsMessage]="showAsMessage"
+        >
         </app-field-error-list>
       }
     }

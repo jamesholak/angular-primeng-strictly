@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ControlContainer, FormBuilder, FormControl, FormGroup, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 
 import * as _ from 'lodash-es';
 
@@ -25,7 +25,8 @@ import { SubComponent2Component } from '../sub-component2/sub-component2.compone
     SubComponent2Component
   ],
   templateUrl: './main-component.component.html',
-  styleUrl: './main-component.component.scss'
+  styleUrl: './main-component.component.scss',
+  viewProviders: [{ provide: ControlContainer, useExisting: FormGroupDirective }]
 })
 export class MainComponentComponent {
   @Input() set myModel(value: IMyMainModel1) {
@@ -58,7 +59,10 @@ export class MainComponentComponent {
         textOption2: '',
         numberOption1: 0,
         numberOption2: 0,
-        numberOption3: 0
+        numberOption3: 0,
+        options3rdLevel: {
+          dateOption1: null
+        }
       }, { nonNullable: true, validators: [Validators.required] }),
       options2: new FormControl<IOptionsModel2>({
         booleanOption1: false

@@ -38,7 +38,8 @@
   <app-form-validation-status [form]="form"></app-form-validation-status>
 
   <p-fieldset legend="MainComponent Error Summary: All Errors">
-    <app-field-error-summary [form]="form" [showFormErrors]="true" [showControlErrors]="true">
+    <app-field-error-summary [form]="form" [showFormErrors]="true" [showControlErrors]="true"
+      [showAsMessage]="showErrorSummaryAsMessage">
     </app-field-error-summary>
   </p-fieldset>
 </div>

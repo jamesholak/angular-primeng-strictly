@@ -17,7 +17,10 @@ export class MyMainModel1 implements IMyMainModel1 {
     textOption2: '',
     numberOption1: 0,
     numberOption2: 0,
-    numberOption3: 0
+    numberOption3: 0,
+    options3rdLevel: {
+      dateOption1: null
+    }
   };
   options2: IOptionsModel2 = {
     booleanOption1: false
@@ -43,7 +46,10 @@ export class MyMainModel2 implements IMyMainModel2 {
     textOption2: '',
     numberOption1: 0,
     numberOption2: 0,
-    numberOption3: 0
+    numberOption3: 0,
+    options3rdLevel: {
+      dateOption1: null
+    }
   };
   options2: IOptionsModel2 = {
     booleanOption1: false
@@ -60,10 +66,15 @@ export interface IOptionsModel1 {
   numberOption1: number | null;
   numberOption2: number;
   numberOption3: number;
+  options3rdLevel: IOptions3rdLevel;
 }
 
 export interface IOptionsModel2 {
   booleanOption1: boolean;
+}
+
+export interface IOptions3rdLevel {
+  dateOption1: Date | null;
 }
 
 export interface IKeyValuePair {

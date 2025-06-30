@@ -1,13 +1,16 @@
 import { Component, forwardRef, Input } from '@angular/core';
-import { AbstractControl, FormBuilder, FormControl, FormGroup, NG_VALIDATORS, NG_VALUE_ACCESSOR, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { AbstractControl, ControlContainer, FormBuilder, FormControl, FormGroup, FormGroupDirective, NG_VALIDATORS, NG_VALUE_ACCESSOR, NgForm, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 
 import { SharedModule } from '../../shared/shared.module';
 
 import { BaseValidatableSubComponent } from '../../shared/base-validatable-sub-component';
+import { createFormControl, createFormControlNullable } from '../../shared/form-control-ex';
 import { FieldErrorListComponent } from "../common/field-error-list/field-error-list.component";
 import { FieldErrorSummaryComponent } from "../common/field-error-summary/field-error-summary.component";
 import { ValidationHelper } from '../../helpers/validation-helper';
-import { createFormControl, createFormControlNullable } from '../../shared/form-control-ex';
+
+import { SubComponent3rdLevelComponent } from '../sub-component3rd-level/sub-component3rd-level.component';
+import { IOptions3rdLevel } from '../../models/models';
 
 @Component({
   selector: 'app-sub-component1',
@@ -15,7 +18,10 @@ import { createFormControl, createFormControlNullable } from '../../shared/form-
     // Project modules
     SharedModule,
     FieldErrorListComponent,
-    FieldErrorSummaryComponent
+    FieldErrorSummaryComponent,
+
+    // Project components
+    SubComponent3rdLevelComponent
   ],
   templateUrl: './sub-component1.component.html',
   styleUrl: './sub-component1.component.scss',
@@ -30,7 +36,8 @@ import { createFormControl, createFormControlNullable } from '../../shared/form-
       useExisting: forwardRef(() => SubComponent1Component),
       multi: true
     }
-  ]
+  ],
+  viewProviders: [{ provide: ControlContainer, useExisting: FormGroupDirective }]
 })
 export class SubComponent1Component extends BaseValidatableSubComponent<ISubComponent1Form> {
   @Input() showCrossFieldValidationErrors = true;
@@ -84,7 +91,10 @@ export class SubComponent1Component extends BaseValidatableSubComponent<ISubComp
         validators: [
           Validators.required, Validators.min(0), Validators.max(1000)
         ]
-      })
+      }),
+      options3rdLevel: new FormControl<IOptions3rdLevel>({
+        dateOption1: null
+      }, { nonNullable: true, validators: [Validators.required] })
     }, { validators: this.createCrossFieldValidatorFn() });
   }
 
@@ -117,4 +127,5 @@ interface ISubComponent1Form {
   numberOption1: FormControl<number | null>;
   numberOption2: FormControl<number>;
   numberOption3: FormControl<number>;
+  options3rdLevel: FormControl<IOptions3rdLevel>;
 }
